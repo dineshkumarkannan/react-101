@@ -1,3 +1,50 @@
-* {
-    color: gray;
+body{
+    margin: 0;
+    padding: 0;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px;
+    background-color: aliceblue;
+}
+
+.logo-container > .logo {
+    width: 95px;
+}
+.nav-items {
+    margin: 0 20px;
+}
+.nav-items > ul {
+    display: flex;
+}
+
+.nav-items > ul > li {
+    margin: 10px;
+    padding: 10px;
+    list-style: none;
+}
+
+.app-body {
+    padding: 10px 130px;
+}
+
+.restaraunt-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.search {
+    margin: 20px 0;
+}
+
+.restaurant-card {
+    width: 200px;
+    margin: 12px;
+}
+
+.restaurant-card:hover {
+    border: 1px solid gray;
+    cursor: pointer;
 }
