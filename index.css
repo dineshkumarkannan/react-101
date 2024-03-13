@@ -49,3 +49,27 @@ body{
     border: 1px solid gray;
     cursor: pointer;
 }
+
+.shimmer-container {
+    padding: 10px 30px;
+}
+
+.shimmer-card-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.shimmer-card {
+    margin: 12px;
+    width: 200px;
+    height: 400px;
+    background-color: ghostwhite;
+}
+
+.shimmer-button {
+    margin: 20px 12px;
+    padding: 10px;
+    width: 300px;
+    height: 20px;
+    background-color: ghostwhite;
+}
