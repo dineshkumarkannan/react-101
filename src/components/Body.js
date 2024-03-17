@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { MOCK_DATA } from "../utils/mockData";
 import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 
 const Body = () => {
     const [listOfRestaurant, setListOfRestaurant] = useState([]);
@@ -9,7 +10,6 @@ const Body = () => {
     const [searchText, setSearchText] = useState("");
 
     useEffect(() => {
-        console.log("usereffect!!");
         fetchData();
     }, []);
 
@@ -77,7 +77,14 @@ const Body = () => {
             </div>
             <div className="restaraunt-container">
                 {filteredData.map((data) => {
-                    return <RestaurantCard key={data.info.id} resData={data} />;
+                    return (
+                        <Link
+                            key={data.info.id}
+                            to={"/restaurant/" + data.info.id}
+                        >
+                            <RestaurantCard resData={data} />
+                        </Link>
+                    );
                 })}
             </div>
         </div>
