@@ -73,3 +73,9 @@ body{
     height: 20px;
     background-color: ghostwhite;
 }
+
+.user-card {
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid gray;
+}
