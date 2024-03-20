@@ -16,31 +16,33 @@ const Header = () => {
         // console.log("useEffect called!");
     }, [btnLogin]);
     return (
-        <div className="header">
-            <div className="logo-container">
-                <img className="logo" src={logo} />
+        <div className="flex justify-between bg-sky-50 shadow-md p-2">
+            <div className="p-2">
+                <img className="w-28 h-auto" src={logo} />
             </div>
-            <div className="nav-items">
-                <ul className="nav">
-                    <li>online status : {onlineStatus ? "✅" : "🔴"}</li>
-                    <li>
+            <div className="flex items-center">
+                <ul className="flex justify-around">
+                    <li className="m-2 p-2">
+                        online status : {onlineStatus ? "✅" : "🔴"}
+                    </li>
+                    <li className="m-2 p-2">
                         {" "}
                         <Link to="/">Home</Link>
                     </li>
-                    <li>
+                    <li className="m-2 p-2">
                         <Link to="/about">About</Link>
                     </li>
-                    <li>
+                    <li className="m-2 p-2">
                         <Link to="/contact">Contact Us</Link>
                     </li>
 
-                    <li>Cart</li>
+                    <li className="m-2 p-2">Cart</li>
 
-                    <li>
+                    <li className="m-2 p-2">
                         <Link to="/grocery">Grocery</Link>
                     </li>
 
-                    <li>
+                    <li className="m-2 p-2">
                         <button
                             onClick={() => {
                                 btnLogin === "Login"
