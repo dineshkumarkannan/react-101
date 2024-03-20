@@ -45,15 +45,17 @@ const Body = () => {
     ) : (
         <div className="app-body">
             <div className="filter">
-                <div className="search">
+                <div className="search m-4 p-4">
                     <input
                         type="text"
                         value={searchText}
+                        className="border border-solid shadow-sm"
                         onChange={(e) => {
                             setSearchText(e.target.value);
                         }}
                     />
                     <button
+                        className="mx-2"
                         onClick={() => {
                             console.log(searchText);
                             setFilteredData(
@@ -70,7 +72,7 @@ const Body = () => {
                 </div>
                 <button
                     type="button"
-                    className="fileter-btn"
+                    className="m-2 px-4 py-2 bg-pink-50"
                     onClick={() => {
                         const filtered = listOfRestaurant.filter(
                             (res) => res.info.avgRating > 4.3
@@ -83,7 +85,7 @@ const Body = () => {
                     Top Rated Restaurants
                 </button>
             </div>
-            <div className="restaraunt-container">
+            <div className="flex flex-wrap">
                 {filteredData.map((data) => {
                     return (
                         <Link
