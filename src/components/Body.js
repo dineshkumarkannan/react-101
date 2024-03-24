@@ -1,14 +1,17 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { MOCK_DATA } from "../utils/mockData";
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, { withPromotedLabel } from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/userContext";
 
 const Body = () => {
     const [listOfRestaurant, setListOfRestaurant] = useState([]);
     const [filteredData, setFilteredData] = useState([]);
     const [searchText, setSearchText] = useState("");
+
+    const RestaurantCardWithPromoted = withPromotedLabel(RestaurantCard);
 
     useEffect(() => {
         fetchData();
@@ -39,6 +42,8 @@ const Body = () => {
         return (
             <h1>You're offline! Please check your internet connection :)</h1>
         );
+
+    const { setUserName, loggedInUser } = useContext(UserContext);
 
     return listOfRestaurant.length <= 0 ? (
         <Shimmer />
@@ -84,6 +89,13 @@ const Body = () => {
                 >
                     Top Rated Restaurants
                 </button>
+                <div>
+                    <input
+                        className="border border-gray p-2"
+                        value={loggedInUser}
+                        onChange={(e) => setUserName(e.target.value)}
+                    />
+                </div>
             </div>
             <div className="flex flex-wrap">
                 {filteredData.map((data) => {
@@ -92,6 +104,7 @@ const Body = () => {
                             key={data.info.id}
                             to={"/restaurant/" + data.info.id}
                         >
+                            {/* {console.log(data.info)}  */}
                             <RestaurantCard resData={data} />
                         </Link>
                     );

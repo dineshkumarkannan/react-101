@@ -17,23 +17,23 @@ class UserClass extends React.Component {
             "https://api.github.com/users/dineshkumarkannan"
         );
         const json = await data.json();
-        console.log(json);
+        // console.log(json);
         this.setState({
             userInfo: json,
         });
     }
 
     componentDidUpdate() {
-        console.log("component did update");
+        // console.log("component did update");
     }
 
     componentWillUnmount() {
-        console.log("component will unmount");
+        // console.log("component will unmount");
     }
 
     render() {
         // const { name, location } = this.props;
-        console.log(this.props.name + "child render");
+        // console.log(this.props.name + "child render");
         return (
             <div className="user-card">
                 <h2>Name : {this.state.userInfo.name}</h2>

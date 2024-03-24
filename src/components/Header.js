@@ -1,11 +1,13 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import logo from "./../../public/asset/app_logo.png";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/userContext";
 
 const Header = () => {
     const [btnLogin, setBtnLogin] = useState("Login");
     const onlineStatus = useOnlineStatus();
+    const data = useContext(UserContext);
     // console.log("Header called!");
 
     // If no dependency array => useEffect will call on every render
@@ -53,6 +55,7 @@ const Header = () => {
                             {btnLogin}
                         </button>
                     </li>
+                    <li className="m-2 p-2">{data.loggedInUser}</li>
                 </ul>
             </div>
         </div>
