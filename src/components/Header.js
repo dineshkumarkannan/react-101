@@ -1,9 +1,9 @@
 import { useState, useEffect, useContext } from "react";
-import logo from "./../../public/asset/app_logo.png";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/userContext";
 import { useSelector } from "react-redux";
+import { LOGO_URL } from "../utils/constants";
 
 const Header = () => {
     const [btnLogin, setBtnLogin] = useState("Login");
@@ -23,7 +23,7 @@ const Header = () => {
     return (
         <div className="flex justify-between bg-sky-50 shadow-md p-2">
             <div className="p-2">
-                <img className="w-28 h-auto" src={logo} />
+                <img className="w-28 h-auto" src={LOGO_URL} />
             </div>
             <div className="flex items-center">
                 <ul className="flex justify-around">

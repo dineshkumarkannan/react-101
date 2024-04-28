@@ -15,6 +15,7 @@ const Items = ({ items }) => {
             {items.map((item) => {
                 return (
                     <div
+                        data-testid="item"
                         className="my-8 py-10 border-b-2 flex justify-between"
                         key={item.card.info.id}
                     >
